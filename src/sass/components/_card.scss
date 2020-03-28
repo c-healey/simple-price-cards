@@ -1,0 +1,85 @@
+.card {
+  border-radius: 0.5rem;
+  background-color: white;
+  position: relative;
+  padding: 2rem;
+  max-width: 30vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.2s;
+  margin: 3rem 0;
+
+  &__heading {
+    font-size: 1.75rem;
+    text-align: center;
+  }
+
+  &__details {
+    padding: 3rem 0;
+    margin: 0 auto;
+    ul {
+      list-style: none;
+      text-align: center;
+      li {
+        font-size: 1.25rem;
+        font-weight: bold;
+        padding: 1rem 0;
+        &:not(:last-child) {
+          border-bottom: 1px solid $color-grey-light-2;
+        }
+      }
+    }
+    .price {
+      display: flex;
+      justify-items: center;
+      align-items: center;
+      font-weight: 700;
+      padding: 0 4rem;
+      &--amount {
+        font-size: 3.8rem;
+      }
+      &--dollar-sign {
+        font-size: 2.25rem;
+      }
+    }
+  }
+  .active {
+    color: white;
+    background-color: $color-primary;
+  }
+
+  // MOBILE CARD no :hover state
+
+  // @include respond (tab-port) {
+  @media only screen and (max-width: 56.25em), only screen and (hover: none) {
+    perspective: 150rem;
+    -moz-perspective: 150rem;
+    position: relative;
+    height: auto;
+    border-radius: 0.5rem;
+    background-color: $color-white;
+    overflow: hidden;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+  }
+}
+.featured,
+.card:hover {
+  background-color: $color-primary;
+  color: white;
+  z-index: 2;
+  transform: scale(1.1);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  &::after {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+
+  .card__heading {
+    color: white;
+  }
+  // .btn--primary {
+  //   color: $color-primary;
+  //   background-image: linear-gradient(to right, #fff, #fff);
+  // }
+}
