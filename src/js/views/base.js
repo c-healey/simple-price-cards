@@ -1,5 +1,5 @@
 export const elements = {
-  card: document.querySelector(".card"),
+  cards: document.querySelectorAll(".card"),
   cardDetail: document.querySelector(".card-detail"),
   container: document.querySelector(".container"),
   priceToggle: document.querySelector(".switch >input"),

@@ -44,28 +44,11 @@
       }
     }
   }
-  .active {
-    color: white;
-    background-color: $color-primary;
-  }
-
-  // MOBILE CARD no :hover state
-
-  // @include respond (tab-port) {
-  @media only screen and (max-width: 56.25em), only screen and (hover: none) {
-    perspective: 150rem;
-    -moz-perspective: 150rem;
-    position: relative;
-    height: auto;
-    border-radius: 0.5rem;
-    background-color: $color-white;
-    overflow: hidden;
-    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
-  }
 }
 .featured,
 .card:hover {
-  background-color: $color-primary;
+  background-image: var(--primary-to-bottom);
+  // background-color: $color-primary;
   color: white;
   z-index: 2;
   transform: scale(1.1);
@@ -78,8 +61,4 @@
   .card__heading {
     color: white;
   }
-  // .btn--primary {
-  //   color: $color-primary;
-  //   background-image: linear-gradient(to right, #fff, #fff);
-  // }
 }

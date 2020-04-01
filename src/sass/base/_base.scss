@@ -21,17 +21,50 @@ html {
     font-size: 75%; //1rem  = 12px; 12/16 = 75%
   }
 }
+:root {
+  --primary-to-bottom: linear-gradient(hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+  --primary: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+  --very-light-grayish-blue: hsl(240, 78%, 98%);
+  --light-gray-blue: hsl(234, 14%, 74%);
+  --gray-blue: hsl(233, 13%, 49%);
+  --dark-gray-blue: hsl(232, 13%, 33%);
+}
 
 body {
+  position: relative;
   box-sizing: border-box;
   padding: 3rem;
-  background-color: hsl(232, 13%, 33%);
+  background-color: var(--very-light-grayish-blue);
 
   @include respond(tab-port) {
     box-sizing: border-box;
     padding: 0;
   }
+  // &::before {
+  //   content: "";
+  //   background-image: url("../images/bg-top.svg");
+  //   background-repeat: no-repeat;
+  //   background-position: top right;
+  //   position: absolute;
+  //   top: 0;
+  //   right: 0;
+  //   height: 100%;
+  //   width: 100%;
+  //   z-index: 1;
+  // }
+  // &::after {
+  //   content: " ";
+  //   background-image: url("../images/bg-bottom.svg");
+  //   background-repeat: no-repeat;
+  //   background-position: bottom left;
+  //   position: absolute;
+  //   bottom: 0;
+  //   left: 0;
+  //   height: 100%;
+  //   width: 100%;
+  // }
 }
+
 .container {
   position: relative;
   display: grid;
@@ -45,8 +78,7 @@ body {
   margin: 0 auto;
   width: 100vw;
   padding: 10rem;
-
-  background-color: hsl(240, 78%, 98%);
+  background-color: var(--very-light-grayish-blue);
   @include respond(phone) {
     grid-template-columns: 1fr;
     grid-row-gap: 0;
@@ -55,5 +87,5 @@ body {
 
 ::selection {
   background-color: $color-primary;
-  color: $color-white;
+  color: white;
 }

@@ -1,11 +1,6 @@
 .btn {
-  background-image: linear-gradient(
-    to right,
-    hsl(236, 72%, 79%),
-    hsl(237, 63%, 64%)
-  );
-  //   $color-primary: hsl(237, 63%, 64%);
-  //   $color-primary-light: hsl(236, 72%, 79%);
+  background-image: var(--primary);
+
   &,
   &:link,
   &:visited {
@@ -36,45 +31,12 @@
   }
   &:active,
   &:focus {
-    outline: 1 solid white;
-    transform: translateY(-0.1rem);
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
-    background-image: linear-gradient(
-      to right,
-      hsl(236, 72%, 79%),
-      hsl(237, 63%, 64%)
-    );
-    color: white;
+    transform: translateY(-0.3rem);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
   }
-  &--white {
-    background-color: $color-white;
-    color: $color-grey-dark;
-    &::after {
-      background-color: $color-white;
-    }
-  }
+
   &--primary {
-    background-image: linear-gradient(
-      to right,
-      $color-primary-light,
-      $color-primary
-    );
-    // linear-gradient($color-primary-light, $color-primary);
+    background-image: var(--primary);
     color: $color-white;
-    // &::after {
-    //   background-color: $color-primary;
-    // }
-  }
-  &:after {
-    content: "";
-    display: inline-block;
-    height: 100%;
-    width: 100%;
-    border-radius: 1rem;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    transition: all 0.4s;
   }
 }

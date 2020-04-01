@@ -4,8 +4,10 @@ export default "rendercards";
 
 export const renderCards = cards => {
   const markup = cards.map((card, idx) => {
-    return `<div class="card ${card.featured ? "featured" : ""}" >
-    <div class="card--${idx + 1}">
+    return `<div class="card card--${idx + 1} ${
+      card.featured ? "featured" : ""
+    }" >
+    
     <h4 class="card__heading">
       <span >${card.title} </span>
     </h4>
@@ -22,7 +24,7 @@ export const renderCards = cards => {
       </ul>
     </div>
     <button class="btn btn--primary">Learn More</button>
-  </div></div>`;
+  </div>`;
   });
 
   elements.container.insertAdjacentHTML("beforeend", markup.join(""));
